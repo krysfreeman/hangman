@@ -1,0 +1,18 @@
+html {
+  background-color: gray;
+}
+
+#image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 600px;
+  height: auto;
+}
+
+button {
+  border-radius: 10px;
+  padding: 5px 5px 5px 5px;
+}
+
