@@ -2,46 +2,30 @@
 //console.log("hello")
 
 // variables
-let keyboard = document.getElementById("#keyboard");
-let answer = '';
+const keys = document.querySelectorAll(".keys");
+let answer = "";
 
 // word array
 let word = ["wreck", "history", "apple", "walrus"];
 
 // new game button
 
-
 // image change at wrong guess
-function imageChange() {
-
-
-}
-
+function imageChange() {}
 
 // word randomizer
 function wordPick() {
-    answer = word[Math.floor(Math.random() * word.length)];
+  answer = word[Math.floor(Math.random() * word.length)];
 
 }
 
-wordPick()
+wordPick();
 
-// letter buttons
-function generateButtons() {
-    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-      `
-        <button
-          class="btn btn-lg btn-primary m-2"
-          id='` + letter + `'
-          onClick="handleGuess('` + letter + `')"
-        >
-          ` + letter + `
-        </button>
-      `).join('');
-  
-    document.getElementById('keyboard').innerHTML = buttonsHTML;
-  }
-
-    
+// keyboard buttons opacity
+addEventListener("click", ( event ) => {
+    let selectedButton = document.getElementById( event.target.id )
+    console.log( 'button', selectedButton)
+    selectedButton.style.opacity = '.5'
+});
 
 
