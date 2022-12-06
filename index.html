@@ -10,11 +10,18 @@
   <body>
     <!--hangman image-->
     <img id="hangmanpic" src="./images/zero.jpg" alt="hangman image" />
-
-    <p id="wordSpotlight">word goes here</p>
-
+    <div class="wordContainer">
+        <!--<p id="word"></p>-->
+        <div class="lettersContainer">
+            <p id="letter0"></p>
+            <p id="letter1"></p>
+            <p id="letter2"></p>
+        </div>
+        <p id="wordSpotlight">word goes here</p>
+    </div>
     <!--new game button-->
-    <button onclick="reset()">New Game</button>
+    <!--<button id="newGameButton">New Game</button>-->
+    <button onClick="window.location.reload();">New Game</button>
 
     <!--keyboard-->
     <div id="keyboard">

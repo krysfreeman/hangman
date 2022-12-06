@@ -29,5 +29,22 @@ button {
 
 #wordSpotlight {
     text-align: center;
+    margin-top: -25px;
 }
 
+#word {
+    text-align: left
+}
+
+.wordContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.lettersContainer {
+    display: flex;
+
+}
