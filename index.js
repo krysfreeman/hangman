@@ -7,6 +7,7 @@ let answer = "";
 let guessed = [];
 let wordStatus = null;
 let bodyCount = 1;
+let freeCount = 0;
 
 // word array
 //let word = ["WRECK", "HISTORY", "APPLE", "WALRUS"];
@@ -39,22 +40,10 @@ function guessWord() {
 
 guessWord();
 
-// keyboard input
+// letter input
 function validateInput(letterSelected) {
-  //Option 1
-  // if ( answer.includes( letterSelected ) ){
-  //     if ( answer[0] === 'C') {
-  //         document.getElementById( 'letterC').innerHTML += letterSelected
-  //     } else if ( answer[1] === 'A' ) {
-  //         document.getElementById( 'letterA').innerHTML += letterSelected
-  //     } else if ( answer[2] === 'T') {
-  //         document.getElementById('letterT').innerHTML += letterSelected
-  //     }
-  // }
-
-  //Option 2
   let pos = 99;
-  //if ( answer[0] === 'C' && answer.includes( letterSelected) === true  ) {
+
   if (answer.includes(letterSelected) === true) {
     pos = answer.indexOf(letterSelected);
     console.log(answer, pos, letterSelected, "1");
@@ -63,10 +52,19 @@ function validateInput(letterSelected) {
   }
   if (pos == 0) {
     document.getElementById("letter0").innerHTML += letterSelected;
+    freeCount++;
+    console.log("freeCount" + " " + freeCount);
   } else if (pos == 1) {
     document.getElementById("letter1").innerHTML += letterSelected;
+    freeCount++;
+    console.log("freeCount" + " " + freeCount);
   } else if (pos == 2) {
     document.getElementById("letter2").innerHTML += letterSelected;
+    freeCount++;
+    console.log("freeCount" + " " + freeCount);
+  } else if (freeCount = 3) {
+    let changePic = document.getElementById("hangmanpic");
+    changePic.src = "./images/win.jpg";
   } else {
     if (bodyCount == 1) {
       let changePic = document.getElementById("hangmanpic");
@@ -75,6 +73,22 @@ function validateInput(letterSelected) {
     } else if (bodyCount == 2) {
       let changePic = document.getElementById("hangmanpic");
       changePic.src = "./images/two.jpg";
+      bodyCount++;
+    } else if (bodyCount == 3) {
+      let changePic = document.getElementById("hangmanpic");
+      changePic.src = "./images/three.jpg";
+      bodyCount++;
+    } else if (bodyCount == 4) {
+      let changePic = document.getElementById("hangmanpic");
+      changePic.src = "./images/four.jpg";
+      bodyCount++;
+    } else if (bodyCount == 5) {
+      let changePic = document.getElementById("hangmanpic");
+      changePic.src = "./images/five.jpg";
+      bodyCount++;
+    } else if (bodyCount == 6) {
+      let changePic = document.getElementById("hangmanpic");
+      changePic.src = "./images/six.jpg";
       bodyCount++;
     }
   }
