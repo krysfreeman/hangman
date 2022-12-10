@@ -44,28 +44,26 @@ guessWord();
 function validateInput(letterSelected) {
   let pos = 99;
 
-  if (answer.includes(letterSelected) === true) {
+if (answer.includes(letterSelected) === true) {
     pos = answer.indexOf(letterSelected);
     console.log(answer, pos, letterSelected, "1");
-  } else {
+    if (pos == 0) {
+      document.getElementById("letter0").innerHTML += letterSelected;
+      freeCount++;
+      console.log("freeCount" + " " + freeCount);
+    } else if (pos == 1) {
+      document.getElementById("letter1").innerHTML += letterSelected;
+      freeCount++;
+      console.log("freeCount" + " " + freeCount);
+    } else if (pos == 2) {
+      document.getElementById("letter2").innerHTML += letterSelected;
+      freeCount++;
+      console.log("freeCount" + " " + freeCount);
+    }
+
     console.log(answer.includes(letterSelected), pos);
-  }
-  if (pos == 0) {
-    document.getElementById("letter0").innerHTML += letterSelected;
-    freeCount++;
-    console.log("freeCount" + " " + freeCount);
-  } else if (pos == 1) {
-    document.getElementById("letter1").innerHTML += letterSelected;
-    freeCount++;
-    console.log("freeCount" + " " + freeCount);
-  } else if (pos == 2) {
-    document.getElementById("letter2").innerHTML += letterSelected;
-    freeCount++;
-    console.log("freeCount" + " " + freeCount);
-  } else if (freeCount = 3) {
-    let changePic = document.getElementById("hangmanpic");
-    changePic.src = "./images/win.jpg";
-  } else {
+
+} else {
     if (bodyCount == 1) {
       let changePic = document.getElementById("hangmanpic");
       changePic.src = "./images/one.jpg";
@@ -91,5 +89,9 @@ function validateInput(letterSelected) {
       changePic.src = "./images/six.jpg";
       bodyCount++;
     }
-  }
+}
+if (freeCount == 3) {
+    let changePic = document.getElementById("hangmanpic");
+    changePic.src = "./images/win.jpg";
+}
 }
