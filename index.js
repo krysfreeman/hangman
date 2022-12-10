@@ -11,7 +11,7 @@ let freeCount = 0;
 
 // word array
 //let word = ["WRECK", "HISTORY", "APPLE", "WALRUS"];
-let word = ["CAT", "DOG"];
+let word = ["CAT", "DOG", "YAK", "ANT", "PIG", "FOX"];
 
 // word randomizer
 function randomWord() {
